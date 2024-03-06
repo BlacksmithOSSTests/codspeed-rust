@@ -22,6 +22,7 @@ pub enum Project {
     Workspace,
 }
 
+// touch test
 pub fn setup(dir: &str, project: Project) -> String {
     //Create a new unique named temp directory
     let tmp_dir = temp_dir().join(format!("cargo-codspeed-test-{}", Uuid::new_v4()));
