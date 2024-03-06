@@ -12,8 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: useblacksmith/rust-cache@v3
-        with:
-          components: rustfmt, clippy
       - uses: pre-commit/action@v2.0.0
         with:
           extra_args: --all-files
