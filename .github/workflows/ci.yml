@@ -11,7 +11,9 @@ jobs:
     runs-on: blacksmith
     steps:
       - uses: actions/checkout@v3
-      - uses: useblacksmith/rust-cache@v3
+      - uses: moonrepo/setup-rust@v1
+        with:
+          components: rustfmt, clippy
       - uses: pre-commit/action@v2.0.0
         with:
           extra_args: --all-files
@@ -20,14 +22,14 @@ jobs:
     runs-on: blacksmith
     steps:
       - uses: actions/checkout@v3
-      - uses: useblacksmith/rust-cache@v3
+      - uses: moonrepo/setup-rust@v1
       - run: cargo test --all
 
   compat-integration-test:
     runs-on: blacksmith
     steps:
       - uses: actions/checkout@v3
-      - uses: useblacksmith/rust-cache@v3
+      - uses: moonrepo/setup-rust@v1
         with:
           cache-target: release
 
